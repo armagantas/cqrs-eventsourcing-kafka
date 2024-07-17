@@ -1,29 +1,2 @@
-server:
-  port: 5001
 
-spring:
-  datasource:
-    url: jdbc:postgresql://127.0.0.1:5432/postgres
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-  kafka:
-    listener:
-      ack-mode: manual_immediate
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: bankaccConsumer
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: '*'
 
